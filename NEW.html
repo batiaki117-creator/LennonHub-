@@ -1,0 +1,125 @@
+<div class="panel">
+  <div class="panel-title" style="text-align:center; font-size:24px; font-weight:700; margin-bottom:16px;">
+    LennonHub+
+  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Script Panel</title>
+  <style>
+    :root{
+      --bg:#0f1015;
+      --card:#11121a;
+      --muted:#9aa0b4;
+      --accent:#7b2eff;
+      --radius:14px;
+    }
+    body { 
+      background: #05050a; 
+      font-family: Inter, system-ui, Arial; 
+      color: #e6e9f2; 
+      margin: 0; 
+      height: 100vh; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+    }
+    .panel {
+      width: 420px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 28px rgba(11,10,20,0.6);
+    }
+    .features { display: grid; gap:12px; margin-bottom:18px;}
+    .feature {
+      background: rgba(255,255,255,0.02);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .feature-title { font-weight: 600; font-size: 17px; margin-bottom:6px; }
+    .feature-sub { color: var(--muted); font-size: 14px; }
+
+    .status-grid { display: grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:18px; }
+    .status {
+      background: rgba(255,255,255,0.01);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .status.small { padding: 10px; }
+    .status-label { color: var(--muted); font-size:13px; margin-bottom:6px; }
+    .status-value { font-weight:700; font-size:15px; display:flex; align-items:center; gap:8px; }
+
+    .dot { width:12px; height:12px; border-radius:50%; display:inline-block; }
+    .dot.online { background: #3ad55b; box-shadow: 0 0 8px rgba(58,213,91,0.2); }
+
+    .trial-btn {
+      display:block;
+      text-align:center;
+      text-decoration:none;
+      font-weight:700;
+      padding:14px 18px;
+      border-radius:12px;
+      background: linear-gradient(90deg, var(--accent), #5a1eff);
+      color: white;
+      font-size: 16px;
+      box-shadow: 0 6px 18px rgba(123,46,255,0.16);
+      margin: 8px 0;
+      user-select:none;
+    }
+    .trial-btn:active { transform: translateY(1px); }
+
+    .note { color: var(--muted); font-size:13px; margin-top:8px; text-align:center; }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <div class="features">
+      <div class="feature"><div class="feature-title">Invisible</div><div class="feature-sub">Temporary cloak</div></div>
+      <div class="feature"><div class="feature-title">Infinite Jump</div><div class="feature-sub">Extended jumps</div></div>
+      <div class="feature"><div class="feature-title">Semi Wallhack</div><div class="feature-sub">Partial visibility</div></div>
+    </div>
+
+    <div class="status-grid">
+      <div class="status">
+        <div class="status-label">Script Status</div>
+        <div class="status-value"><span class="dot online"></span> Online</div>
+      </div>
+      <div class="status">
+        <div class="status-label">Key Server</div>
+        <div class="status-value"><span class="dot online"></span> Online</div>
+      </div>
+      <div class="status small">
+        <div class="status-label">Players</div>
+        <div class="status-value" id="players-count">369</div>
+      </div>
+      <div class="status small">
+        <div class="status-label">Clicks</div>
+        <div class="status-value" id="clicks-count">0</div>
+      </div>
+    </div>
+
+    <!-- შენი ლინკი -->
+    <a id="trial-btn" class="trial-btn" 
+       href="https://www.roblox.com/share?code=8949cd905d7c974a82c8de0f93b7e68e&type=Server" 
+       target="_blank" rel="noopener noreferrer">
+      Get Script
+    </a>
+
+    <p class="note">Opens the Roblox share link in a new tab, then opens the cooldown page in another tab.</p>
+  </div>
+
+  <script>
+    (function(){
+      const clicksEl = document.getElementById('clicks-count');
+      const btn = document.getElementById('trial-btn');
+      let clicks = 0;
+      btn.addEventListener('click', function(){
+        clicks += 1;
+        clicksEl.textContent = clicks;
+      });
+    })();
+  </script>
+</body>
+</html>
